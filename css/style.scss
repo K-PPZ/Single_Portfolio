@@ -1,0 +1,139 @@
+// NORMALISE //
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+// NORMALISE //
+
+@mixin center ($justify_content: center, $align_items: center, $flex_direction: column) {
+    display: flex;
+    justify-content: $justify_content;
+    align-items: $align_items;
+    flex-direction: $flex_direction;
+}
+
+
+@media screen and (max-width: 630px) {
+
+    body {
+        @include center(flex-start);
+
+        & header {
+            width: 100%;
+            height: 50%;
+            @include center(space-around);
+            margin-bottom: 60px;
+
+            & section {
+                margin: 0;
+            }
+
+            & #logo_link {
+                @include center(space-between, center, row);
+                width: 95%;
+                height: 17%;
+
+                & a {
+                    text-decoration: none;
+                    background-color: black;
+                    color: white;
+                    border-radius: 50px;
+                    width: 35%;
+                    height: 80%;
+                    @include center();
+                }
+            }
+
+            & #title_header {
+                @include center();
+                height: 70%;
+
+                & h1 {
+                    font-size: 55px;
+                    width: 80%;
+                    text-align: center;
+                    margin: 0;
+                    margin-bottom: 20px;
+                }
+
+                & p {
+                    text-align: center;
+                    width: 50%;
+                    margin: 0;
+                    font-size: 20px;
+                }
+            }
+        }
+
+
+        & main {
+            width: 100%;
+            @include center();
+
+            & #section_icons {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+                grid-column-gap: 20px;
+                grid-row-gap: 20px;
+                width: 85%;
+
+                & #article_graphic_design {
+                    grid-area: 1 / 1 / 3 / 3;
+                    background-color: #755CDE;
+                    background-image: url(../img/icons/graphic-design_icon.svg);
+                    background-repeat: no-repeat;
+                    height: 500px;
+                }
+                & #article_ui_ux {
+                    grid-area: 3 / 1 / 4 / 2;
+                    background-color: #F6A560;
+                    background-image: url(../img/icons/ui-ux_icon.svg);
+                    background-repeat: no-repeat;
+                }
+                & #article_apps {
+                    grid-area: 3 / 2 / 4 / 3;
+                    background-color: #F39E9E;
+                    background-image: url(../img/icons/apps_icon.svg);
+                    background-repeat: no-repeat;
+                }
+                & #article_illustrations {
+                    grid-area: 4 / 1 / 5 / 3;
+                    background-color: #EB7565;
+                    background-image: url(../img/icons/illustrations_icon.svg);
+                    background-repeat: no-repeat;
+                }
+                & #article_photography {
+                    grid-area: 5 / 1 / 6 / 3;
+                    background-color: #61C4B7;
+                    background-image: url(../img/icons/photography_icon.svg);
+                    background-repeat: no-repeat;
+                }
+                & #article_motion_graphics {
+                    grid-area: 6 / 1 / 7 / 3;
+                    background-color: #552049;
+                    background-image: url(../img/icons/motion-graphics_icon.svg);
+                    background-repeat: no-repeat;
+                }
+
+                & article {
+                    border-radius: 10px;
+                    @include center(start, end, row);
+                    padding: 5%;
+                    color: white;
+                    font-size: 30px;
+                    background-size: 35%;
+                    background-position: 90% 20%;
+                }
+            }
+        }
+    }
+
+}
