@@ -20,14 +20,13 @@ body {
 }
 
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 375px) {
 
     body {
         @include center(flex-start);
 
         & header {
             width: 100%;
-            height: 50%;
             @include center(space-around);
             margin-bottom: 60px;
 
@@ -35,18 +34,19 @@ body {
                 margin: 0;
             }
 
-            & #logo_link {
+            & .logo_link {
                 @include center(space-between, center, row);
                 width: 95%;
-                height: 17%;
+                margin-bottom: 50px;
+                padding: 1% 0;
 
                 & a {
                     text-decoration: none;
                     background-color: black;
                     color: white;
                     border-radius: 50px;
-                    width: 35%;
-                    height: 80%;
+                    width: 45%;
+                    height: 65%;
                     @include center();
                 }
             }
@@ -56,7 +56,7 @@ body {
                 height: 70%;
 
                 & h1 {
-                    font-size: 55px;
+                    font-size: 40px;
                     width: 80%;
                     text-align: center;
                     margin: 0;
@@ -65,7 +65,7 @@ body {
 
                 & p {
                     text-align: center;
-                    width: 50%;
+                    width: 90%;
                     margin: 0;
                     font-size: 20px;
                 }
@@ -84,14 +84,13 @@ body {
                 grid-column-gap: 20px;
                 grid-row-gap: 20px;
                 width: 85%;
-                margin-bottom: 130px;
 
                 & #article_graphic_design {
                     grid-area: 1 / 1 / 3 / 3;
                     background-color: #755CDE;
                     background-image: url(../img/icons/graphic-design_icon.svg);
                     background-repeat: no-repeat;
-                    height: 500px;
+                    height: 325px;
                 }
                 & #article_ui_ux {
                     grid-area: 3 / 1 / 4 / 2;
@@ -129,7 +128,7 @@ body {
                     @include center(start, end, row);
                     padding: 5%;
                     color: white;
-                    font-size: 30px;
+                    font-size: 25px;
                     background-size: 35%;
                     background-position: 90% 20%;
                 }
@@ -138,7 +137,7 @@ body {
             & #section_girl {
                 width: 85%;
                 height: 50%;
-                margin-bottom: 130px;
+                margin-bottom: 30px;
 
                 & article {
                     width: 100%;
@@ -150,7 +149,7 @@ body {
                     }
 
                     & h2 {
-                        font-size: 45px;
+                        font-size: 25px;
                         text-align: center;
                         margin-bottom: 10px;
                     }
@@ -167,9 +166,124 @@ body {
                         background-color: #EB7565;
                         border-radius: 50px;
                         @include center();
-                        width: 40%;
-                        height: 45px;
+                        width: 60%;
+                        height: 50px;
                     }
+                }
+            }
+
+            & #section_carrousel {
+                width: 100%;
+                height: 600px;
+                @include center();
+
+                & h2 {
+                    font-size: 25px;
+                }
+
+                & #imgs_carrousel {
+                    width: 100%;
+                    height: 50%;
+                    @include center(space-around, center, row);
+
+                    & img {
+                        border-radius: 10px;
+                        width: 50%;
+                        // display: none;
+                    }
+
+                    & #img_middle {
+                        margin: 0 20px;
+                    }
+
+                    & #img_left, #img_right {
+                        display: block;
+                    }
+
+                    & div {
+                        width: 306px;
+                        height: 100%;
+                        border-radius: 10px;
+                    }
+                }
+
+                & #arrows {
+                    @include center(space-evenly, center, row);
+                    width: 50%;
+                    height: 50%;
+
+                    & #arrow_left {
+                        background-image: url(../img/arrow-left.svg);
+                    }
+
+                    & #arrow_right {
+                        background-image: url(../img/arrow-right.svg);
+                    }
+
+                    & div {
+                        background-color: black;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        cursor: pointer;
+                        border-radius: 50%;
+                        width: 35%;
+                        height: 35%;
+                    }
+                }
+            }
+        }
+
+
+        & footer {
+            width: 100%;
+            margin-top: 20px;
+            @include center();
+            
+            & #section_book {
+                background-color: black;
+                width: 95%;
+                height: 380px;
+                border-radius: 10px;
+                @include center(space-evenly, center, column);
+                padding: 10% 5%;
+
+                & h2 {
+                    font-size: 30px;
+                    color: white;
+                    text-align: center;
+                }
+
+                & p {
+                    color: white;
+                    text-align: center;
+                    font-size: 17px;
+                }
+
+                & a {
+                    text-decoration: none;
+                    color: white;
+                    background-color: #EB7565;
+                    border-radius: 50px;
+                    @include center();
+                    width: 60%;
+                    height: 50px;
+                }
+            }
+
+            & .logo_link {
+                @include center(space-between, center, row);
+                width: 95%;
+                height: 17%;
+                margin-top: 30px;
+
+                & a {
+                    text-decoration: none;
+                    background-color: black;
+                    color: white;
+                    border-radius: 50px;
+                    width: 45%;
+                    height: 65%;
+                    @include center();
                 }
             }
         }
